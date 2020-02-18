@@ -7,9 +7,15 @@ export default class MainInputs extends Component {
         <div className="container">
           <div className="row">
             <div className="col s12">
-              
               <div className="input-field">
-                <input placeholder="Placeholder" id="first_name" type="text" className="validate" />
+                <input 
+                  placeholder="Placeholder" 
+                  id="input_value" 
+                  type="text" 
+                  className="validate" 
+                  value={this.props.inputValue}
+                  onChange={this.props.handleChangeInputValue}
+                />
                 <label for="first_name">Enter Amount</label>
               </div>
               

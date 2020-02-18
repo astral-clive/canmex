@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MainInputs from './components/MainInputs';
 
 import './css/app.scss'; 
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <MainInputs />
-      <Footer />
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: '1230'
+    };
+
+    // need to bind to use this.state
+    this.handleChangeInputValue = this.handleChangeInputValue.bind(this);
+  }
+
+  handleChangeInputValue(event) {
+    console.log(event.target.value);
+    // check for only numbers
+    var reg = /(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/;
+    var valid = reg.test(event.target.value);
+    console.log(valid);
+    if( valid ) {
+      this.setState({ inputValue: event.target.value });
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header inputValue={this.state.inputValue} />
+        <MainInputs inputValue={this.state.inputValue} handleChangeInputValue={this.handleChangeInputValue} />
+        <Footer inputValue={this.state.inputValue} />
+      </div>
+    )
+  }
 }
 
-export default App;
+
