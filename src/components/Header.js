@@ -5,7 +5,11 @@ export default class Header extends Component {
     return (
       <div className="header-section">
         <div className="container">
-          Header
+          <div className="row">
+            <div className="col s12">
+              Header
+            </div>
+          </div>
         </div>
       </div>
     )
