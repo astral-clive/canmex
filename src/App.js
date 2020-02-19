@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import MainInputs from './components/MainInputs';
 
 import './css/app.scss'; 
@@ -25,15 +25,15 @@ export default class App extends Component {
     var reg = /(^[\d]+.\.[\d]{1,2}$)|(^[\d]+$)|(^[\d]+\.$)/;
     var valid = reg.test(event.target.value);
     // console.log(valid);
-    if( valid || event.target.value == '' ) {
+    if( valid || event.target.value === '' ) {
       // grab values
       const inputValue = event.target.value;
       const canadianValue = inputValue * this.state.mexToCanRate;
       const mexicanValue = inputValue * this.state.canToMexRate;
       this.setState({
         inputValue: inputValue,
-        canadianValue: canadianValue,
-        mexicanValue: mexicanValue
+        canadianValue: canadianValue.toFixed(2),
+        mexicanValue: mexicanValue.toFixed(2)
       });
     }
   }
@@ -41,12 +41,14 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header canadianValue={this.state.canadianValue} />
+        <Header 
+          canadianValue={this.state.canadianValue}
+          mexicanValue={this.state.mexicanValue}
+        />
         <MainInputs
           inputValue={this.state.inputValue} 
           handleChangeInputValue={this.handleChangeInputValue}
         />
-        <Footer mexicanValue={this.state.mexicanValue} />
       </div>
     )
   }
