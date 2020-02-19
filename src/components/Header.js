@@ -7,19 +7,9 @@ export default class Header extends Component {
         <div className="container">
           <div className="row">
             <div className="col s12">
-              
-              <div className="input-field">
-                <input 
-                  placeholder="Canadian" 
-                  disabled 
-                  id="canadian_output" 
-                  type="text" 
-                  className="validate"
-                  value={'$' + this.props.canadianValue}
-                />
-                <label for="first_name">Canadian Dollar</label>
+              <div className="output-pill">
+                <span>${this.props.canadianValue}</span>
               </div>
-
             </div>
           </div>
         </div>

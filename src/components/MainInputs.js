@@ -11,7 +11,7 @@ export default class MainInputs extends Component {
                 <input 
                   placeholder="enter amount" 
                   id="input_value" 
-                  type="text" 
+                  type="number" 
                   className="validate" 
                   value={this.props.inputValue}
                   onChange={this.props.handleChangeInputValue}

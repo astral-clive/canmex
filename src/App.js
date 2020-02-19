@@ -25,7 +25,7 @@ export default class App extends Component {
     var reg = /(^[\d]+.\.[\d]{1,2}$)|(^[\d]+$)|(^[\d]+\.$)/;
     var valid = reg.test(event.target.value);
     // console.log(valid);
-    if( valid ) {
+    if( valid || event.target.value == '' ) {
       // grab values
       const inputValue = event.target.value;
       const canadianValue = inputValue * this.state.mexToCanRate;
