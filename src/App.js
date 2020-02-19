@@ -22,10 +22,9 @@ export default class App extends Component {
 
   handleChangeInputValue(event) {
     // check for only numbers
-    // var reg = /(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/;
-    // var valid = reg.test(event.target.value);
+    var reg = /(^[\d]+.\.[\d]{1,2}$)|(^[\d]+$)|(^[\d]+\.$)/;
+    var valid = reg.test(event.target.value);
     // console.log(valid);
-    let valid = true;
     if( valid ) {
       // grab values
       const inputValue = event.target.value;

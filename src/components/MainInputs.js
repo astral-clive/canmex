@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class MainInputs extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class MainInputs extends Component {
             <div className="col s12">
               <div className="input-field">
                 <input 
-                  placeholder="$" 
+                  placeholder="enter amount" 
                   id="input_value" 
                   type="text" 
                   className="validate" 
