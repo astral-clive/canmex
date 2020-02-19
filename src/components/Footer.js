@@ -10,7 +10,7 @@ export default class Footer extends Component {
               
               <div className="input-field">
                 <input placeholder="Mexican" disabled id="mexican_output" type="text" className="validate"
-                  value={'$' + (this.props.inputValue * 2) + ' (MXN)'} />
+                  value={'$' + this.props.mexicanValue + ' (MXN)'} />
                 <label for="first_name">Mexican Peso</label>
               </div>
 

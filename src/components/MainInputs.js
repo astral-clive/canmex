@@ -9,7 +9,7 @@ export default class MainInputs extends Component {
             <div className="col s12">
               <div className="input-field">
                 <input 
-                  placeholder="Placeholder" 
+                  placeholder="$" 
                   id="input_value" 
                   type="text" 
                   className="validate" 

@@ -15,7 +15,7 @@ export default class Header extends Component {
                   id="canadian_output" 
                   type="text" 
                   className="validate"
-                  value={'$' + (this.props.inputValue * 0.5) + ' (CAD)'}
+                  value={'$' + this.props.canadianValue}
                 />
                 <label for="first_name">Canadian Dollar</label>
               </div>
