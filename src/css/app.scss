@@ -35,6 +35,22 @@ html, body, #root, .App {
   margin-bottom: 15px;
   position: relative;
   overflow:hidden;
+  & .flag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 75px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    &.canadian {
+      background-image: url('../images/canadian-flag.svg');
+    }
+    &.mexican {
+      background-image: url('../images/mexican-flag.svg');
+    }
+  }
   & .denom {
     position: absolute;
     right: 0;
